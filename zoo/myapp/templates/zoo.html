@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block my_content %}
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Species</th>
+      <th>Age</th>
+      <th>Health</th>
+      <th>Enclosures</th>
+    </tr>
+  </thead>
+
+  <body>
+    {% for animal in animals %}
+    <tr>
+      <td><a href={%url "single_animal" animal.id %}>{{animal.name}}</a></td>
+      <td>{{ animal.species}}</td>
+      <td>{{ animal.age}}</td>
+      <td>{{ animal.health}}</td>
+      <td>{{ animal.enclosure_id}}</td>
+    </tr>
+    {% endfor %}
+  </body>
+</table>
+{% endblock %}
